@@ -1,6 +1,6 @@
 # react-instagram-clone
 
-## Routes (pages∫)
+## Routes (pages)
 
 - / (feed page)
 
