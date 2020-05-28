@@ -57,3 +57,62 @@ Components:
 - ProfilePicture
 - Layouts
 - SEO
+
+## tree preview
+
+```bash
+.
+├── App.js
+├── components
+│   ├── explore
+│   │   ├── ExploreGrid.js
+│   │   └── ExploreSuggestions.js
+│   ├── feed
+│   │   ├── FeedPost.js
+│   │   ├── FeedPostSkeleton.js
+│   │   └── FeedSideSuggestions.js
+│   ├── notification
+│   │   ├── NotificationList.js
+│   │   └── NotificationTooltip.js
+│   ├── post
+│   │   ├── MorePostsFromUser.js
+│   │   ├── Post.js
+│   │   ├── PostModal.js
+│   │   └── PostSkeleton.js
+│   ├── profile
+│   │   └── ProfileTabs.js
+│   └── shared
+│       ├── FollowButton.js
+│       ├── FollowSuggestions.js
+│       ├── GridPost.js
+│       ├── Layout.js
+│       ├── LoadingScreen.js
+│       ├── Navbar.js
+│       ├── OptionsDialog.js
+│       ├── ProfilePicture.js
+│       ├── Seo.js
+│       └── UserCard.js
+├── data.js
+├── icons.js
+├── images
+│   ├── default-user-image.jpg
+│   ├── facebook-icon-blue.svg
+│   ├── facebook-icon-white.png
+│   ├── icon-sheet-2.png
+│   ├── icon-sheet.png
+│   └── logo.png
+├── index.js
+├── pages
+│   ├── edit-profile.js
+│   ├── explore.js
+│   ├── feed.js
+│   ├── login.js
+│   ├── not-found.js
+│   ├── post.js
+│   ├── profile.js
+│   └── signup.js
+├── styles.js
+└── theme.js
+
+9 directories, 42 files
+```
