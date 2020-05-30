@@ -1,52 +1,38 @@
 # react-instagram-clone
 
-## Routes (pages)
+## Routes
 
-- / (feed page)
+第一步：观察路由，根据路由反推项目结构
 
-Components:
-
-- FeedPost
-- FeedPostSkeleton
-- FeedSideSuggestions
-
+- `/ (feed page)`
+  - Components:
+    - FeedPost
+    - FeedPostSkeleton
+    - FeedSideSuggestions
 - /explore (explore page)
-
-Components:
-
-- ExploreGrid
-- ExploreSuggestions
-
+  - Components:
+    - ExploreGrid
+    - ExploreSuggestions
 - /p/:postId
-
-Components:
-
-- Post
-- PostModal
-- MorePostsFromUser
-
-- notifications
-
-Components:
-
-- NotificationList
-- NotificationTooltip
-
+  - Components:
+    - Post
+    - PostModal
+    - MorePostsFromUser
+- /notifications
+  - Components:
+    - NotificationList
+    - NotificationTooltip
 - /:username (profile page)
-
-Components:
-
-- prfileTabs
-
+  - Components:
+    - prfileTabs
 - /acounts/edit (edit profile page)
-
 - /accounts/login (login page)
-
 - /accounts/emailsignup (signup page)
-
-- *(not found page)
+- * (not found page)
 
 ## Shared Components
+
+抽离项目可以公共的组件
 
 - NavBar
 - FollowSuggestions
@@ -58,7 +44,9 @@ Components:
 - Layouts
 - SEO
 
-## tree preview
+## 定义项目结构
+
+- tree preview
 
 ```bash
 .
@@ -116,3 +104,4 @@ Components:
 
 9 directories, 42 files
 ```
+
