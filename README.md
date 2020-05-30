@@ -107,7 +107,8 @@
 
 ## 定义路由
 
-> 温习：拦截了 `history` 后，自顶向下查找匹配的组件，以 `Switch` 方式切换，如果首页和带 `:` 详页路由记得加 `exact`，要不然就进行不下去了，最后惯例来个 `notfound`。
+- 温习：拦截了 `history` 后，自顶向下查找匹配的组件，以 `Switch` 方式切换，如果首页和带 `:` 详页路由记得加 `exact`，要不然就进行不下去了，最后惯例来个 `notfound`。
+- 其实后期可以来异步组件 `lazy、Suspense` 搞一下。
 
 ```js
 function App() {
@@ -124,6 +125,47 @@ function App() {
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </Router>
+  );
+}
+```
+
+## Notes
+
+- Layout 组件
+  - 血统超级正的classes命名方式
+  - marginTop 这个有意思，竟然和我当年封装GatsbyJS的layout一模一样，默认值满足过半的情况。
+
+```js
+function Layout({ children, title, marginTop = 60 }) {
+  const classes = useLayoutStyles();
+
+  return (
+    <section className={classes.section}>
+      <SEO title={title} />
+      <Navbar />
+      <main className={classes.main} style={{ marginTop }}>
+        <section className={classes.childrenWrapper}>
+          <div className={classes.children}>
+            {children}
+          </div>
+        </section>
+      </main>
+    </section>
+  )
+}
+```
+
+- `CSR` 如何搞 `SEO`
+  - 答案就是 `react-helmet`
+
+```js
+function SEO({ title }) {
+  const titleText = title ? `${title} - Instagram` : 'Instagram'
+  return (
+    <Helmet>
+      <title>{titleText}</title>
+      {/* <meta></meta> */}
+    </Helmet>
   );
 }
 ```
