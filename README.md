@@ -9,26 +9,26 @@
     - FeedPost
     - FeedPostSkeleton
     - FeedSideSuggestions
-- /explore (explore page)
+- `/explore` (explore page)
   - Components:
     - ExploreGrid
     - ExploreSuggestions
-- /p/:postId
+- `/p/:postId`
   - Components:
     - Post
     - PostModal
     - MorePostsFromUser
-- /notifications
+- `/notifications`
   - Components:
     - NotificationList
     - NotificationTooltip
-- /:username (profile page)
+- `/:username` (profile page)
   - Components:
     - prfileTabs
-- /acounts/edit (edit profile page)
-- /accounts/login (login page)
-- /accounts/emailsignup (signup page)
-- * (not found page)
+- `/acounts/edit` (edit profile page)
+- `/accounts/login` (login page)
+- `/accounts/emailsignup` (signup page)
+- `* (not found page)`
 
 ## Shared Components
 
@@ -105,3 +105,25 @@
 9 directories, 42 files
 ```
 
+## 定义路由
+
+> 温习：拦截了 `history` 后，自顶向下查找匹配的组件，以 `Switch` 方式切换，如果首页和带 `:` 详页路由记得加 `exact`，要不然就进行不下去了，最后惯例来个 `notfound`。
+
+```js
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={FeedPage} />
+        <Route path="/explore" component={ExplorePage} />
+        <Route path="/:username" exact component={ProfilePage} />
+        <Route path="/p/:postId" exact component={PostPage} />
+        <Route path="/account/edit" component={EditProfilePage} />
+        <Route path="/account/login" component={LoginPage} />
+        <Route path="/account/signup" component={SignUpPage} />
+        <Route path="*" component={NotFoundPage} />
+      </Switch>
+    </Router>
+  );
+}
+```
