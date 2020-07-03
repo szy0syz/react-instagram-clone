@@ -11,7 +11,7 @@ function LoginPage() {
 
   return (
     <>
-      <SEO />
+      <SEO title="Login" />
       <section className={classes.section}>
         <article>
           <Card className={classes.card}>
@@ -61,7 +61,7 @@ function LoginPage() {
             <Typography align="right" variant="body2">
               Don't have an account?
             </Typography>
-            <Link to="/accounts/emailsignup">
+            <Link to="/account/signup">
               <Button color="primary">Sign up</Button>
             </Link>
           </Card>
@@ -71,12 +71,12 @@ function LoginPage() {
   );
 }
 
-export function LoginWithFacebook({ color, iconColor }) {
+export function LoginWithFacebook({ color, iconColor, variant }) {
   const classes = useLoginPageStyles();
   const facebookIcon = iconColor === "blue" ? FacebookIconBlue : FacebookIconWhite;
 
   return (
-    <Button fullWidth color={color}>
+    <Button fullWidth color={color} variant={variant}>
       <img src={facebookIcon} alt="facebook icon" className={classes.facebookIcon} />
       Log In Facebook
     </Button>
